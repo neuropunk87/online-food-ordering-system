@@ -1,4 +1,4 @@
-from menu_management import UnavailableForOrderError
+from exceptions import UnavailableForOrderError
 
 
 class Order:

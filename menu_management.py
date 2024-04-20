@@ -5,12 +5,6 @@ class Dish:
         self.price = price
 
 
-class UnavailableForOrderError(Exception):
-    def __init__(self, message="This dish is not available to order. Please choose something else."):
-        self.message = message
-        super().__init__(self.message)
-
-
 class Menu:
     def __init__(self):
         self.dishes = []
@@ -101,6 +95,6 @@ class Menu:
                 name, category, price = line.strip().split(", ")
                 if name.lower() == dish_name.lower():
                     print(f"Name: {name}, Category: {category}, Price: {price}")
-                    return
+                    return f"Name: {name}, Category: {category}, Price: {price}"
         print("Dish not found.")
 

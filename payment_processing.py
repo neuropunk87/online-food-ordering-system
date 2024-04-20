@@ -1,13 +1,10 @@
-class InsufficientFundsForPaymentError(Exception):
-    def __init__(self, message="Insufficient funds for payment. Payment processing failed."):
-        self.message = message
-        super().__init__(self.message)
+from exceptions import InsufficientFundsForPaymentError
 
 
 class Payment:
     @staticmethod
     def process_payment(total_amount, user):
-        order_details = f"Total amount of your paid order: ${total_amount:.2f}\n"
+        order_details = f"Order paid. Total amount: ${total_amount:.2f}\n"
         confirmation = input(f"Confirm payment of ${total_amount} (Y/N): ")
         if confirmation.lower() == "y":
             if user.wallet >= total_amount:
